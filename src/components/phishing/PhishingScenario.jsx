@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import './PhishingScenario.css';
 import emailData from '../../scenarios/scenario1/phishing_emails_dataset.json';
-import ScenarioIntro from '../shared/ScenarioIntro.jsx';
+import ShellContext from '../shared/ShellContext.jsx';
 
 const introContent = `
 # 🛡️ ¡Bienvenido al Detector de Correos Falsos! 🛡️
 
-**¡Hola Alejandro Quintero Rodríguez!**
+**¡Hola {{NOMBRE_APELLIDO}}!**
 
 Eres estudiante de 5° grado en el **Colegio Ciber Genios del Futuro** y tienes una misión muy importante: convertirte en un experto detective digital. Tu tarea será identificar qué correos electrónicos son reales y cuáles son intentos de **phishing** (correos fraudulentos que intentan engañarte).
 
 ## 📧 **Datos de tu Colegio**
 - **Nombre:** Colegio Ciber Genios del Futuro
-- **Tu correo:** alequin.rodriguez@geniosfuturo.edu.co
+- **Tu correo:** {{CORREO_USUARIO}}@geniosfuturo.edu.co
 - **Dominio oficial:** @geniosfuturo.edu.co
 
 ### 👨‍🏫 **Tus Profesores:**
@@ -103,7 +103,7 @@ const PhishingScenario = ({ onBack }) => {
 
     if (gameState === 'intro') {
         return (
-            <ScenarioIntro 
+            <ShellContext 
                 markdownContent={introContent} 
                 onStart={handleStartGame} 
                 onBack={onBack} 
