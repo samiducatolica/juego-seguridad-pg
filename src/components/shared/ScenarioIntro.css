@@ -24,3 +24,20 @@
     justify-content: center;
     gap: 1rem;
 }
+
+article{
+    background-color: #000000;
+    color: #F8F9FA;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 900px;
+    min-height: 200px;
+    margin: 1rem auto;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-y: auto;
+    display: block;
+
+}
+

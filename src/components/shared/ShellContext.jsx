@@ -25,6 +25,7 @@ const ShellContext = ({ markdownContent, onStart, onBack }) => {
             
             // Split content into pages using ## as delimiter
             const pages = personalizedContent.split('## ').filter(page => page.trim() !== '');
+            console.log('Processed Pages:', pages); // Debugging output
             setProcessedContent(pages);
         }
     }, [userData, markdownContent]);
@@ -48,7 +49,7 @@ const ShellContext = ({ markdownContent, onStart, onBack }) => {
                         setIsAnimationFinished(true);
                     }
                 ]}
-                wrapper="div"
+                wrapper="article"
                 cursor={true}
                 repeat={0}
                 speed={80}
