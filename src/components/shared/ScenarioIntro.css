@@ -1,0 +1,26 @@
+.intro-container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+.intro-container h1, .intro-container h2, .intro-container h3 {
+    color: #343A40;
+}
+
+.intro-container p, .intro-container li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.intro-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
