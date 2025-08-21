@@ -6,7 +6,8 @@ import './ScenarioIntro.css'; // Re-using styles
 const ShellContext = ({ markdownContent, onStart, onBack }) => {
     const [isModalOpen, setIsModalOpen] = useState(true);
     const [userData, setUserData] = useState(null);
-    const [processedContent, setProcessedContent] = useState('');
+    const [processedContent, setProcessedContent] = useState([]); // Will be an array of pages
+    const [currentPage, setCurrentPage] = useState(0);
     const [isAnimationFinished, setIsAnimationFinished] = useState(false);
 
     const handleUserSubmit = (name, lastName) => {
@@ -21,7 +22,10 @@ const ShellContext = ({ markdownContent, onStart, onBack }) => {
             const personalizedContent = markdownContent
                 .replace(/\{\{NOMBRE_APELLIDO\}\}/g, userData.fullName)
                 .replace(/\{\{CORREO_USUARIO\}\}/g, userData.email);
-            setProcessedContent(personalizedContent);
+            
+            // Split content into pages using ## as delimiter
+            const pages = personalizedContent.split('## ').filter(page => page.trim() !== '');
+            setProcessedContent(pages);
         }
     }, [userData, markdownContent]);
 
@@ -30,15 +34,16 @@ const ShellContext = ({ markdownContent, onStart, onBack }) => {
     }
 
     // Render the container only when the content has been processed
-    if (!processedContent) {
+    if (processedContent.length === 0) {
         return null; // Or a loading spinner
     }
 
     return (
         <div className="intro-container">
             <TypeAnimation
+                key={currentPage} // Force re-animation on page change
                 sequence={[
-                    processedContent,
+                    `## ${processedContent[currentPage]}`,
                     () => {
                         setIsAnimationFinished(true);
                     }
@@ -46,12 +51,27 @@ const ShellContext = ({ markdownContent, onStart, onBack }) => {
                 wrapper="div"
                 cursor={true}
                 repeat={0}
-                speed={80} // Adjusted speed for better readability
+                speed={80}
             />
             {isAnimationFinished && (
                 <div className="intro-actions">
-                    <button onClick={onStart} className="scenario-btn">Comenzar Juego</button>
-                    <button onClick={onBack} className="scenario-btn back-btn">Volver al Menú</button>
+                    {currentPage < processedContent.length - 1 && (
+                        <button 
+                            onClick={() => {
+                                setCurrentPage(currentPage + 1);
+                                setIsAnimationFinished(false); // Reset for next animation
+                            }} 
+                            className="scenario-btn"
+                        >
+                            Siguiente
+                        </button>
+                    )}
+                    {currentPage === processedContent.length - 1 && (
+                        <>
+                            <button onClick={onStart} className="scenario-btn">Comenzar Juego</button>
+                            <button onClick={onBack} className="scenario-btn back-btn">Volver al Menú</button>
+                        </>
+                    )}
                 </div>
             )}
         </div>
