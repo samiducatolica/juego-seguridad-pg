@@ -49,7 +49,8 @@ const ShellContext = ({ markdownContent, onStart, onBack }) => {
                         setIsAnimationFinished(true);
                     }
                 ]}
-                wrapper="article"
+                wrapper="div"
+                className="intro-text"
                 cursor={true}
                 repeat={0}
                 speed={80}
