@@ -1,0 +1,389 @@
+{
+  "emails": [
+    {
+      "id": 1,
+      "tipo": "real",
+      "remitente": "juan.perez@geniosfuturo.edu.co",
+      "nombre_remitente": "Juan Pérez",
+      "asunto": "Tarea de matemáticas para mañana",
+      "contenido": "Hola Alejandro,\n\nRecuerda que mañana tienes que entregar los ejercicios de la página 45 del libro de matemáticas. Si tienes dudas, pregúntame en clase.\n\nSaludos,\nProfesor Juan Pérez",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 2,
+      "tipo": "falso",
+      "remitente": "juan.perez@gmail.com",
+      "nombre_remitente": "Juan Pérez",
+      "asunto": "URGENTE: Verifica tu cuenta estudiantil",
+      "contenido": "Hola Alejandro,\n\nDebe verificar su cuenta estudiantil INMEDIATAMENTE o será suspendida. Haga clic aquí para verificar: www.geniosfuturo-verificacion.com\n\nIngrese su contraseña y datos personales.\n\nSaludos urgentes,\nJuan Pérez",
+      "enlaces": ["www.geniosfuturo-verificacion.com"],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 3,
+      "tipo": "real",
+      "remitente": "mariaf.rodriguez@geniosfuturo.edu.co",
+      "nombre_remitente": "María Fernanda Rodríguez",
+      "asunto": "Reunión de padres próximo viernes",
+      "contenido": "Estimados padres y estudiantes,\n\nLes informamos que el próximo viernes 25 de octubre tendremos reunión de padres a las 3:00 PM en el aula de 5° grado.\n\nCordialmente,\nProfesora María Fernanda Rodríguez",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 4,
+      "tipo": "falso",
+      "remitente": "admin@geniosfuturo.co",
+      "nombre_remitente": "Administrador",
+      "asunto": "¡Felicidades! Has ganado una beca",
+      "contenido": "¡FELICIDADES ALEJANDRO!\n\nHAS SIDO SELECCIONADO para una beca de $500.000. Para reclamar tu premio, envía los datos de la tarjeta de crédito de tus padres.\n\n¡ACTÚA RÁPIDO! Esta oferta expira en 24 horas.\n\nClick aquí: www.beca-genios.net",
+      "enlaces": ["www.beca-genios.net"],
+      "nivel_dificultad": "medio"
+    },
+    {
+      "id": 5,
+      "tipo": "real",
+      "remitente": "eandres.medina@geniosfuturo.edu.co",
+      "nombre_remitente": "Esteban Andrés Medina",
+      "asunto": "Recordatorio: Proyecto de ciencias",
+      "contenido": "Hola Alejandro,\n\nTe recuerdo que el proyecto sobre el sistema solar debe entregarse el próximo miércoles. No olvides incluir la maqueta y el informe escrito.\n\nSi necesitas ayuda, puedes preguntarme en clase.\n\nProfesor Esteban Medina",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 6,
+      "tipo": "falso",
+      "remitente": "soporte@geniosfuturo.edu.co",
+      "nombre_remitente": "Soporte Técnico",
+      "asunto": "Problema con tu cuenta - Acción requerida",
+      "contenido": "Estimado estudiante,\n\nHemos detectado actividad sospechosa en tu cuenta. Para mantenerla segura, confirma tu identidad ingresando tu contraseña aquí:\n\nwww.verificar-cuenta-genios.org\n\nSi no lo haces en 2 horas, tu cuenta será bloqueada permanentemente.\n\nEquipo de Soporte",
+      "enlaces": ["www.verificar-cuenta-genios.org"],
+      "nivel_dificultad": "medio"
+    },
+    {
+      "id": 7,
+      "tipo": "real",
+      "remitente": "samaury.camargo@geniosfuturo.edu.co",
+      "nombre_remitente": "Samaury Camargo",
+      "asunto": "Cambio de horario - Educación física",
+      "contenido": "Queridos estudiantes,\n\nLes informo que la clase de educación física del martes se cambió para el jueves a la misma hora. Por favor traigan su uniforme deportivo.\n\nProfesora Samaury Camargo",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 8,
+      "tipo": "falso",
+      "remitente": "mariaf.rodriguez@geniosfuturo.com",
+      "nombre_remitente": "María Rodríguez",
+      "asunto": "Calificaciones finales - Revisa urgente",
+      "contenido": "Hola Alejandro,\n\nTus calificaciones están muy bajas. Para evitar perder el año, debes pagar una cuota de recuperación de $200.000.\n\nHaz clic aquí para pagar: www.pagos-genios.net\n\nTienes solo 12 horas o perderás el grado.\n\nProf. María",
+      "enlaces": ["www.pagos-genios.net"],
+      "nivel_dificultad": "medio"
+    },
+    {
+      "id": 9,
+      "tipo": "real",
+      "remitente": "juan.perez@geniosfuturo.edu.co",
+      "nombre_remitente": "Juan Pérez",
+      "asunto": "Felicitaciones por tu examen",
+      "contenido": "Hola Alejandro,\n\n¡Felicitaciones! Obtuviste una excelente calificación en el examen de matemáticas. Sigue así.\n\nProfesor Juan Pérez",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 10,
+      "tipo": "falso",
+      "remitente": "netflix@geniosfuturo.edu.co",
+      "nombre_remitente": "Netflix Educativo",
+      "asunto": "¡Netflix GRATIS para estudiantes!",
+      "contenido": "¡Hola Alejandro!\n\nComo estudiante destacado, tienes derecho a Netflix GRATIS por un año. Solo necesitamos verificar tus datos.\n\nIngresa aquí: www.netflix-estudiantes.co\n\nProporciona:\n- Tu nombre completo\n- Número de cédula\n- Dirección de casa\n\n¡Oferta limitada!",
+      "enlaces": ["www.netflix-estudiantes.co"],
+      "nivel_dificultad": "medio"
+    },
+    {
+      "id": 11,
+      "tipo": "real",
+      "remitente": "eandres.medina@geniosfuturo.edu.co",
+      "nombre_remitente": "Esteban Andrés Medina",
+      "asunto": "Material para la clase de mañana",
+      "contenido": "Estudiantes de 5° grado,\n\nPara la clase de mañana necesitan traer:\n- Regla\n- Compás\n- Lápices de colores\n\nVamos a trabajar en figuras geométricas.\n\nProfesor Esteban Medina",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 12,
+      "tipo": "falso",
+      "remitente": "rector@geniosfuturo.edu.co",
+      "nombre_remitente": "Rector",
+      "asunto": "EMERGENCIA: Evacuación inmediata",
+      "contenido": "ATENCIÓN ALEJANDRO:\n\nEmergencia en el colegio. Debes salir INMEDIATAMENTE y dirigirte a:\nwww.punto-encuentro-emergencia.com\n\nIngresa tus datos para confirmar que estás seguro:\n- Nombre completo\n- Teléfono de tus padres\n- Dirección\n\nES MUY URGENTE. NO DEMORES.",
+      "enlaces": ["www.punto-encuentro-emergencia.com"],
+      "nivel_dificultad": "dificil"
+    },
+    {
+      "id": 13,
+      "tipo": "real",
+      "remitente": "samaury.camargo@geniosfuturo.edu.co",
+      "nombre_remitente": "Samaury Camargo",
+      "asunto": "Excelente trabajo en equipo",
+      "contenido": "Hola Alejandro,\n\nQuería felicitarte por tu excelente desempeño en el trabajo en equipo durante la clase de educación física. Sigue colaborando así con tus compañeros.\n\nProfesora Samaury",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 14,
+      "tipo": "falso",
+      "remitente": "juan.peres@geniosfuturo.edu.co",
+      "nombre_remitente": "Juan Peres",
+      "asunto": "Nueva contraseña requerida",
+      "contenido": "Hola Alejandro,\n\nEl sistema requiere que cambies tu contraseña. La actual ha expirado.\n\nIngresa aquí tu contraseña actual: www.cambiar-password-genios.net\n\nDespués elige una nueva.\n\nProf. Juan Peres\nDepartamento de Matemáticas",
+      "enlaces": ["www.cambiar-password-genios.net"],
+      "nivel_dificultad": "dificil"
+    },
+    {
+      "id": 15,
+      "tipo": "real",
+      "remitente": "mariaf.rodriguez@geniosfuturo.edu.co",
+      "nombre_remitente": "María Fernanda Rodríguez",
+      "asunto": "Excursión al museo próximo mes",
+      "contenido": "Estimados estudiantes y padres,\n\nTenemos planeada una excursión educativa al Museo de Ciencias para el próximo mes. Enviaremos pronto los detalles y autorizaciones.\n\nCordialmente,\nProfesora María Fernanda Rodríguez",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 16,
+      "tipo": "falso",
+      "remitente": "bancolombia@notificaciones.com",
+      "nombre_remitente": "Bancolombia",
+      "asunto": "Subsidio educativo aprobado - $800.000",
+      "contenido": "Estimado ALEJANDRO QUINTERO,\n\nSu subsidio educativo ha sido APROBADO por $800.000.\n\nPara reclamar, ingrese a: www.subsidio-bancolombia.co\n\nNecesitamos:\n- Número de cédula del acudiente\n- Datos de la cuenta de ahorros\n- Código de verificación: ALE2024\n\nTienes 48 horas para reclamarlo.",
+      "enlaces": ["www.subsidio-bancolombia.co"],
+      "nivel_dificultad": "medio"
+    },
+    {
+      "id": 17,
+      "tipo": "real",
+      "remitente": "juan.perez@geniosfuturo.edu.co",
+      "nombre_remitente": "Juan Pérez",
+      "asunto": "Respuesta a tu pregunta sobre fracciones",
+      "contenido": "Hola Alejandro,\n\nComo me preguntaste sobre las fracciones, te explico: para sumar fracciones con diferente denominador, primero debes encontrar el mínimo común múltiplo. Te ayudo más en clase.\n\nProfesor Juan Pérez",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 18,
+      "tipo": "falso",
+      "remitente": "whatsapp@geniosfuturo.edu.co",
+      "nombre_remitente": "WhatsApp Educativo",
+      "asunto": "Tu WhatsApp será suspendido",
+      "contenido": "Hola Alejandro,\n\nTu cuenta de WhatsApp será SUSPENDIDA porque has enviado muchos mensajes desde el colegio.\n\nPara evitar la suspensión, verifica tu identidad:\nwww.whatsapp-verificar.net\n\nIngresa:\n- Número de teléfono\n- Código de verificación que te llegará\n- Contraseña de WhatsApp\n\nTienes 6 horas.",
+      "enlaces": ["www.whatsapp-verificar.net"],
+      "nivel_dificultad": "medio"
+    },
+    {
+      "id": 19,
+      "tipo": "real",
+      "remitente": "eandres.medina@geniosfuturo.edu.co",
+      "nombre_remitente": "Esteban Andrés Medina",
+      "asunto": "Laboratorio de ciencias cancelado",
+      "contenido": "Estudiantes de 5° grado,\n\nEl laboratorio de ciencias de hoy se cancela porque estoy enfermo. Lo reprogramamos para el viernes a la misma hora.\n\nProfesor Esteban Medina",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 20,
+      "tipo": "falso",
+      "remitente": "google@geniosfuturo.edu.co",
+      "nombre_remitente": "Google Classroom",
+      "asunto": "Acceso restringido a Google Classroom",
+      "contenido": "Estimado usuario,\n\nSu acceso a Google Classroom ha sido RESTRINGIDO por uso inadecuado.\n\nPara restaurar el acceso, confirme su identidad en:\nwww.classroom-restore.co\n\nDebe ingresar:\n- Usuario de Google\n- Contraseña actual\n- Código estudiantil\n\nSin esto, perderá todas sus tareas guardadas.\n\nAdministrador del Sistema",
+      "enlaces": ["www.classroom-restore.co"],
+      "nivel_dificultad": "medio"
+    },
+    {
+      "id": 21,
+      "tipo": "real",
+      "remitente": "samaury.camargo@geniosfuturo.edu.co",
+      "nombre_remitente": "Samaury Camargo",
+      "asunto": "Torneo deportivo interno",
+      "contenido": "Queridos estudiantes,\n\n¡Tenemos un torneo deportivo interno la próxima semana! Habrá fútbol, baloncesto y atletismo. Los equipos se organizarán mañana en clase.\n\n¡Vamos a divertirnos!\nProfesora Samaury",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 22,
+      "tipo": "falso",
+      "remitente": "ministerioeducacion@gov.co",
+      "nombre_remitente": "Ministerio de Educación",
+      "asunto": "ICFES Obligatorio - Registro inmediato",
+      "contenido": "ALEJANDRO QUINTERO RODRÍGUEZ,\n\nDebe presentar un ICFES especial para estudiantes de primaria.\n\nRegistro OBLIGATORIO en:\nwww.icfes-primaria.gov.co\n\nSin registro, no podrá continuar a 6° grado.\n\nDatos requeridos:\n- Documento de identidad\n- Datos del acudiente\n- Comprobante de pago $150.000\n\nFecha límite: HOY",
+      "enlaces": ["www.icfes-primaria.gov.co"],
+      "nivel_dificultad": "dificil"
+    },
+    {
+      "id": 23,
+      "tipo": "real",
+      "remitente": "mariaf.rodriguez@geniosfuturo.edu.co",
+      "nombre_remitente": "María Fernanda Rodríguez",
+      "asunto": "Revisión de cuadernos mañana",
+      "contenido": "Estimados estudiantes,\n\nMañana revisaré los cuadernos de español. Asegúrense de tener completas todas las actividades que hemos desarrollado esta semana.\n\nProfesora María Fernanda",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 24,
+      "tipo": "falso",
+      "remitente": "amazon@ofertas.com",
+      "nombre_remitente": "Amazon",
+      "asunto": "🎁 Regalo especial para estudiantes inteligentes",
+      "contenido": "¡Hola Alejandro!\n\nPor ser un estudiante destacado, Amazon te regala un PlayStation 5 completamente GRATIS.\n\nPara reclamar tu premio:\n1. Visita: www.amazon-regalo-estudiantes.com\n2. Ingresa los datos de tus padres\n3. Confirma la dirección de entrega\n\n⚠️ Solo tienes 3 horas para reclamarlo.\n\n¡No pierdas esta oportunidad única!",
+      "enlaces": ["www.amazon-regalo-estudiantes.com"],
+      "nivel_dificultad": "medio"
+    },
+    {
+      "id": 25,
+      "tipo": "real",
+      "remitente": "juan.perez@geniosfuturo.edu.co",
+      "nombre_remitente": "Juan Pérez",
+      "asunto": "Examen de matemáticas reprogramado",
+      "contenido": "Hola estudiantes de 5° grado,\n\nEl examen de matemáticas que estaba programado para mañana se pospone para el próximo martes. Tendrán más tiempo para estudiar.\n\nProfesor Juan Pérez",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 26,
+      "tipo": "falso",
+      "remitente": "samaury.carmago@geniosfuturo.edu.co",
+      "nombre_remitente": "Samaury Carmago",
+      "asunto": "Uniforme deportivo - Pago pendiente",
+      "contenido": "Estimado Alejandro,\n\nTiene un pago pendiente por el uniforme deportivo de $120.000.\n\nSi no paga hoy, no podrá participar en educación física.\n\nPague aquí: www.uniforme-genios.co\n\nNecesitamos:\n- Tarjeta de crédito de los padres\n- Código de seguridad\n- Fecha de vencimiento\n\nProfesora Samaury Carmago",
+      "enlaces": ["www.uniforme-genios.co"],
+      "nivel_dificultad": "dificil"
+    },
+    {
+      "id": 27,
+      "tipo": "real",
+      "remitente": "eandres.medina@geniosfuturo.edu.co",
+      "nombre_remitente": "Esteban Andrés Medina",
+      "asunto": "Experimento de ciencias exitoso",
+      "contenido": "Hola Alejandro,\n\nEl experimento del volcán que hiciste quedó muy bien. Me gustó mucho la explicación que diste sobre las reacciones químicas. ¡Sigue así!\n\nProfesor Esteban Medina",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 28,
+      "tipo": "falso",
+      "remitente": "youtube@geniosfuturo.edu.co",
+      "nombre_remitente": "YouTube Kids",
+      "asunto": "¡Canal de YouTube premiado!",
+      "contenido": "¡FELICIDADES ALEJANDRO!\n\nTu perfil ha sido seleccionado para crear un CANAL DE YOUTUBE KIDS con 100.000 suscriptores instantáneos.\n\nPara activar tu canal:\nwww.youtube-kids-genios.net\n\nSolo necesitamos:\n- Foto tuya\n- Teléfono de tus padres\n- Dirección completa\n- Nombre del colegio\n\n¡Serás famoso en 24 horas!\n\nEquipo YouTube Kids",
+      "enlaces": ["www.youtube-kids-genios.net"],
+      "nivel_dificultad": "medio"
+    },
+    {
+      "id": 29,
+      "tipo": "real",
+      "remitente": "samaury.camargo@geniosfuturo.edu.co",
+      "nombre_remitente": "Samaury Camargo",
+      "asunto": "Hidratación importante durante ejercicio",
+      "contenido": "Queridos estudiantes,\n\nRecuerden traer siempre botella de agua para educación física. Con este calor es muy importante mantenerse hidratados durante el ejercicio.\n\nProfesora Samaury Camargo",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 30,
+      "tipo": "falso",
+      "remitente": "seguridad@geniosfuturo.edu.co",
+      "nombre_remitente": "Departamento de Seguridad",
+      "asunto": "ALERTA: Virus detectado en tu cuenta",
+      "contenido": "ALERTA DE SEGURIDAD PARA: Alejandro Quintero\n\nSe ha detectado un VIRUS PELIGROSO en tu cuenta estudiantil.\n\nPara eliminar el virus:\n1. Ve a: www.antivirus-genios.co\n2. Descarga el limpiador\n3. Ingresa tu usuario y contraseña\n4. Ejecuta la limpieza completa\n\nSi no lo haces en 1 HORA, el virus:\n- Borrará todas tus tareas\n- Infectará las computadoras del colegio\n- Suspenderá tu cuenta permanentemente\n\nACTÚA INMEDIATAMENTE",
+      "enlaces": ["www.antivirus-genios.co"],
+      "nivel_dificultad": "dificil"
+    },
+    {
+      "id": 31,
+      "tipo": "real",
+      "remitente": "mariaf.rodriguez@geniosfuturo.edu.co",
+      "nombre_remitente": "María Fernanda Rodríguez",
+      "asunto": "Biblioteca: nuevos libros disponibles",
+      "contenido": "Estimados estudiantes,\n\nLa biblioteca tiene nuevos libros de aventuras y ciencia ficción. Pueden ir a verlos durante el descanso o después de clases.\n\n¡Feliz lectura!\nProfesora María Fernanda Rodríguez",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 32,
+      "tipo": "falso",
+      "remitente": "tiktok@geniosfuturo.edu.co",
+      "nombre_remitente": "TikTok Educativo",
+      "asunto": "¡Verificación TikTok Blue gratis!",
+      "contenido": "¡Hola Alejandro!\n\nComo estudiante modelo, te ofrecemos TikTok Blue GRATIS por ser menor de edad.\n\nBeneficios:\n✓ Verificación azul\n✓ Videos sin límite\n✓ Dinero por visualizaciones\n\nActivar en: www.tiktok-blue-estudiantes.co\n\nDatos necesarios:\n- Usuario de TikTok\n- Contraseña actual\n- Foto de tu documento\n- Número de celular\n\n¡Solo para estudiantes destacados como tú!",
+      "enlaces": ["www.tiktok-blue-estudiantes.co"],
+      "nivel_dificultad": "medio"
+    },
+    {
+      "id": 33,
+      "tipo": "real",
+      "remitente": "juan.perez@geniosfuturo.edu.co",
+      "nombre_remitente": "Juan Pérez",
+      "asunto": "Consulta sobre ejercicio 15",
+      "contenido": "Hola Alejandro,\n\nVeo que tuviste dificultades con el ejercicio 15 de probabilidad. Mañana en clase lo explicaré nuevamente con más ejemplos.\n\nProfesor Juan Pérez",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 34,
+      "tipo": "falso",
+      "remitente": "facebook@geniosfuturo.edu.co",
+      "nombre_remitente": "Facebook Meta",
+      "asunto": "Tu cuenta Facebook será eliminada",
+      "contenido": "Estimado Alejandro Quintero,\n\nSu cuenta de Facebook será ELIMINADA en 24 horas por violación de políticas de menores de edad.\n\nPara mantener su cuenta activa:\nwww.facebook-verificar-edad.net\n\nDebe proporcionar:\n- Foto de documento de identidad\n- Autorización firmada por padres\n- Número de tarjeta de crédito para verificar mayoría de edad\n\nSin estos datos, perderá todos sus amigos y fotos.\n\nSoporte Meta Facebook",
+      "enlaces": ["www.facebook-verificar-edad.net"],
+      "nivel_dificultad": "dificil"
+    },
+    {
+      "id": 35,
+      "tipo": "real",
+      "remitente": "eandres.medina@geniosfuturo.edu.co",
+      "nombre_remitente": "Esteban Andrés Medina",
+      "asunto": "Día de la ciencia próxima semana",
+      "contenido": "Estudiantes de 5° grado,\n\nLa próxima semana celebraremos el Día de la Ciencia. Cada estudiante puede traer un experimento simple para mostrar a sus compañeros.\n\nProfesor Esteban Medina",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 36,
+      "tipo": "falso",
+      "remitente": "instagram@geniosfuturo.edu.co",
+      "nombre_remitente": "Instagram",
+      "asunto": "🌟 ¡Cuenta verificada disponible!",
+      "contenido": "¡Hola Alejandro!\n\nInstagram ha seleccionado tu perfil para recibir la verificación GRATUITA (★) por ser un estudiante ejemplar.\n\nPara obtener tu verificación:\n🔗 www.instagram-verificar-estudiantes.co\n\nSolo necesitamos:\n📸 Selfie con tu documento\n📱 Número de teléfono\n🔐 Contraseña actual de Instagram\n📍 Ubicación exacta\n\n⏰ Oferta válida por 2 horas únicamente.\n\n¡No pierdas esta oportunidad única!\n\nEquipo Instagram Education",
+      "enlaces": ["www.instagram-verificar-estudiantes.co"],
+      "nivel_dificultad": "medio"
+    },
+    {
+      "id": 37,
+      "tipo": "real",
+      "remitente": "samaury.camargo@geniosfuturo.edu.co",
+      "nombre_remitente": "Samaury Camargo",
+      "asunto": "Buen trabajo en atletismo",
+      "contenido": "Hola Alejandro,\n\nQuería felicitarte por tu mejora en los ejercicios de atletismo. Has mejorado mucho tu tiempo en la carrera de 100 metros.\n\n¡Sigue entrenando!\nProfesora Samaury Camargo",
+      "enlaces": [],
+      "nivel_dificultad": "facil"
+    },
+    {
+      "id": 38,
+      "tipo": "falso",
+      "remitente": "policianacional@gov.co",
+      "nombre_remitente": "Policía Nacional",
+      "asunto": "CITACIÓN OFICIAL - Comparendo digital",
+      "contenido": "CITACIÓN OFICIAL PARA: ALEJANDRO QUINTERO RODRÍGUEZ\n\nHa sido reportado por uso indebido de internet en horario escolar.\n\nCOMPARECER INMEDIATAMENTE en:\nwww.policia-comparendo-digital.gov.co\n\nDebe presentar:\n- Documento de identidad\n- Autorización de padres\n- Pago de multa: $350.000\n\nSi no comparece en 4 HORAS:\n❌ Se emitirá orden de captura\n❌ Antecedentes judiciales\n❌ Expulsión del colegio\n\nCOMISARÍA VIRTUAL DE MENORES\nPolicía Nacional de Colombia",
+      "enlaces": ["www.policia-comparendo-digital.gov.co"],
+      "nivel_dificultad": "dificil"
+    },
+    {
+      "id": 39,
+      "tipo": "real",
+      "remitente": "mariaf.rodriguez@geniosfuturo.edu.co",
+      "nombre_remitente": "María Fernanda Rodríguez",
+      "asunto": "Concurso de escritura creativa",
+      "contenido": "Estimados estudiantes,\n\nInvito
