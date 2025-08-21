@@ -1,0 +1,89 @@
+.phishing-container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+.phishing-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.email-container {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.email-header {
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.email-header strong {
+  color: #495057;
+}
+
+.email-body {
+  line-height: 1.7;
+}
+
+.email-actions {
+  margin-top: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.action-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.safe-btn {
+  background-color: #28A745; /* VERDE-EXITO */
+  color: white;
+}
+
+.safe-btn:hover {
+  background-color: #218838;
+}
+
+.phishy-btn {
+  background-color: #DC3545; /* ROJO-ERROR */
+  color: white;
+}
+
+.phishy-btn:hover {
+  background-color: #c82333;
+}
+
+.feedback {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.feedback.correct {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.feedback.incorrect {
+  background-color: #f8d7da;
+  color: #721c24;
+}

@@ -1,15 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import dukeInicio from './assets/images/character/Duke_inicio.png';
-
-// Componente provisional para el Escenario de Phishing
-const PhishingScenario = ({ onBack }) => (
-    <div>
-        <h2>Phishing Scenario</h2>
-        <p>This is where the phishing game will be.</p>
-        <button onClick={onBack} className="scenario-btn back-btn">Go Back</button>
-    </div>
-);
+import PhishingScenario from './components/phishing/PhishingScenario.jsx';
 
 // Componente provisional para el Escenario de Ransomware
 const RansomwareScenario = ({ onBack }) => (
