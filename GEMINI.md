@@ -2,7 +2,7 @@
 Este proyecto es un viedo juego secillo para la enseñansa de  consptos de ciberseguridad para niños entre 9 y 16 años, se implementara un menu inicial con cuatro escenarios
 mediante botones, los escenarios seran pishing, rasonware, contraseñas seguras pendiente a determinar el ultimo escenario
 
-#Instruccones del proyecto
+# Instruccones del proyecto
 1. El juego se desarrollara utilizando las mejores practicas de desarrollo web, utilizando HTML, CSS y JavaScript.
 2. El juego debe ser responsivo y funcionar en dispositivos móviles y de escritorio.
 3. El juego debe ser accesible para personas con discapacidades.
@@ -57,6 +57,13 @@ AMARILLO-ADVERTENCIA: #FFC107
 - Respuesta Incorrecta: El texto o un ícono se muestra en ROJO-ERROR (#DC3545)
 - Íconos o Tarjetas interactivas: VERDE-AZULADO-SECUNDARIO (#17A2B8)
 
+## Contexto de los escenarios
+1. Componente de "Máquina de Escribir": Utiliza una librería de React como react-type-animation para renderizar el texto letra por letra, simulando el efecto de escritura.
+2. Personalización del Contexto: Carga el contenido del archivo Markdown como una cadena de
+   texto en tu componente. Antes de pasarlo al componente de "máquina de escribir", usa el
+   método .replace() de JavaScript para sustituir dinámicamente los placeholders (ej.
+   {{NOMBRE_USUARIO}}, {{CORREO_USUARIO}}) con los datos que el jugador ingrese al inicio
+   del escenario.
 ## escenario 1
 * El escenario de pishing  pesentara al inicio  un texto de contexto el cual se encuentra en src/data/scenario1/phishing_game_intro.md
 * Los datos para la emulacion de los correos se encuentra en src/data/scenario1/phishing_emails_dataset.json
