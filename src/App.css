@@ -1,53 +1,54 @@
 
 body {
-  background-color: #F8F9FA;
-  color: #343A40;
-  font-family: sans-serif;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+    background-color: #F8F9FA;
+    color: #343A40;
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .menu-container {
-  text-align: center;
-  background-color: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  color: #343A40;
-  margin-bottom: 30px;
+    color: #343A40;
+    margin-bottom: 30px;
+    margin-top: 15px;
 }
 
 .scenario-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .scenario-btn {
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 5px;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .scenario-btn:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 .scenario-btn:disabled {
-  background-color: #6C757D;
-  cursor: not-allowed;
+    background-color: #6C757D;
+    cursor: not-allowed;
 }
 
 .scenario-btn.secondary {
@@ -68,6 +69,11 @@ h1 {
 }
 
 .character-image {
-  max-width: 150px;
-  margin-bottom: 20px;
+    max-width: 199px; /* Aumentado un 15% desde 173px */
+    margin-bottom: 0;
+    border: 4px solid #17A2B8; /* Borde de color añadido */
+    border-radius: 50%; /* Hecho circular */
+    padding: 5px; /* Relleno añadido entre la imagen y el borde */
+    background-color: white; /* Asegura que el fondo sea blanco detrás de la imagen */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil añadida */
 }

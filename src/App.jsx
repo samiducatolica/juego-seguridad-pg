@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import dukeInicio from './assets/images/character/Duke_inicio.png';
 
-// Placeholder for Phishing Scenario
+// Componente provisional para el Escenario de Phishing
 const PhishingScenario = ({ onBack }) => (
     <div>
         <h2>Phishing Scenario</h2>
@@ -11,7 +11,7 @@ const PhishingScenario = ({ onBack }) => (
     </div>
 );
 
-// Placeholder for Ransomware Scenario
+// Componente provisional para el Escenario de Ransomware
 const RansomwareScenario = ({ onBack }) => (
     <div>
         <h2>Ransomware Scenario</h2>
@@ -20,7 +20,7 @@ const RansomwareScenario = ({ onBack }) => (
     </div>
 );
 
-// Placeholder for Secure Passwords Scenario
+// Componente provisional para el Escenario de Contraseñas Seguras
 const SecurePasswordsScenario = ({ onBack }) => (
     <div>
         <h2>Secure Passwords Scenario</h2>
@@ -29,7 +29,7 @@ const SecurePasswordsScenario = ({ onBack }) => (
     </div>
 );
 
-// Placeholder for the fourth scenario
+// Componente provisional para el cuarto escenario
 const ComingSoonScenario = ({ onBack }) => (
     <div>
         <h2>Coming Soon!</h2>
