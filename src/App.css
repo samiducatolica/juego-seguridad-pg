@@ -1,42 +1,73 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+body {
+  background-color: #F8F9FA;
+  color: #343A40;
+  font-family: sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.menu-container {
   text-align: center;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  color: #343A40;
+  margin-bottom: 30px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.scenario-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.scenario-btn {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.card {
-  padding: 2em;
+.scenario-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
-.read-the-docs {
-  color: #888;
+.scenario-btn:disabled {
+  background-color: #6C757D;
+  cursor: not-allowed;
+}
+
+.scenario-btn.secondary {
+    background-color: #17A2B8;
+}
+
+.scenario-btn.secondary:hover {
+    background-color: #117a8b;
+}
+
+.back-btn {
+    margin-top: 20px;
+    background-color: #6C757D;
+}
+
+.back-btn:hover {
+    background-color: #5a6268;
+}
+
+.character-image {
+  max-width: 150px;
+  margin-bottom: 20px;
 }
