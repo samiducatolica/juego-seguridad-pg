@@ -9,6 +9,8 @@ const ShellContext = ({ markdownContent, onStart, onBack }) => {
     const [processedContent, setProcessedContent] = useState([]); // Will be an array of pages
     const [currentPage, setCurrentPage] = useState(0);
     const [isAnimationFinished, setIsAnimationFinished] = useState(false);
+    const [name, setName] = useState('');
+    const [lastName, setLastName] = useState('');
 
     const handleUserSubmit = (name, lastName) => {
         const fullName = `${name} ${lastName}`;
@@ -17,13 +19,19 @@ const ShellContext = ({ markdownContent, onStart, onBack }) => {
         setIsModalOpen(false);
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (name && lastName) {
+            handleUserSubmit(name, lastName);
+        }
+    };
+
     useEffect(() => {
         if (userData) {
             const personalizedContent = markdownContent
                 .replace(/\{\{NOMBRE_APELLIDO\}\}/g, userData.fullName)
                 .replace(/\{\{CORREO_USUARIO\}\}/g, userData.email);
             
-            // Split content into pages using ## as delimiter
             const pages = personalizedContent.split('## ').filter(page => page.trim() !== '');
             console.log('Processed Pages:', pages); // Debugging output
             setProcessedContent(pages);
@@ -31,7 +39,34 @@ const ShellContext = ({ markdownContent, onStart, onBack }) => {
     }, [userData, markdownContent]);
 
     if (isModalOpen) {
-        return <Modal isOpen={isModalOpen} onClose={() => onBack()} onSubmit={handleUserSubmit} />;
+        return (
+            <Modal
+                isOpen={isModalOpen}
+                onClose={() => onBack()}
+                title="¡Bienvenido, Detective!"
+            >
+                <p>Para comenzar, por favor ingresa tu nombre y apellido.</p>
+                <form onSubmit={handleSubmit} className="modal-form">
+                    <input
+                        type="text"
+                        placeholder="Nombre"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder="Apellido"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        required
+                    />
+                    <div className="modal-actions">
+                         <button type="submit" className="scenario-btn">Comenzar Misión</button>
+                    </div>
+                </form>
+            </Modal>
+        );
     }
 
     // Render the container only when the content has been processed
@@ -53,7 +88,7 @@ const ShellContext = ({ markdownContent, onStart, onBack }) => {
                 className="intro-text"
                 cursor={true}
                 repeat={0}
-                speed={80}
+                speed={100}
             />
             {isAnimationFinished && (
                 <div className="intro-actions">

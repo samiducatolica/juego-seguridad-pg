@@ -98,3 +98,8 @@
     border-color: #d39e00; /* Darker Yellow */
     color: #343A40; /* TEXTO-PRINCIPAL */
 }
+
+.menu-buttons-back{
+    display: flex;
+    justify-content: space-around;
+}
