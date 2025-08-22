@@ -94,9 +94,8 @@ const PhishingScenario = ({onBack}) => {
                     <p><strong>De:</strong> {currentEmail.nombre_remitente} &lt;{currentEmail.remitente}&gt;</p>
                     <p><strong>Asunto:</strong> {currentEmail.asunto}</p>
                 </div>
-                <div className="email-body">
-                    <p>{currentEmail.contenido.replace(/\n/g, '<br />')}</p>
-                </div>
+                <div className="email-body" dangerouslySetInnerHTML={{ __html: currentEmail.contenido.replace(/\n/g, '<br />') }}
+/>
             </div>
 
             <div className="email-actions">

@@ -6,7 +6,7 @@
       "remitente": "juan.perez@geniosfuturo.edu.co",
       "nombre_remitente": "Juan Pérez",
       "asunto": "Tarea de matemáticas para mañana",
-      "contenido": "Hola Alejandro,\n\nRecuerda que mañana tienes que entregar los ejercicios de la página 45 del libro de matemáticas. Si tienes dudas, pregúntame en clase.\n\nSaludos,\nProfesor Juan Pérez",
+      "contenido": "Hola Alejandro,Recuerda que mañana tienes que entregar los ejercicios de la página 45 del libro de matemáticas. Si tienes dudas, pregúntame en clase.\n\nSaludos,\nProfesor Juan Pérez",
       "enlaces": [],
       "nivel_dificultad": "facil"
     },
@@ -16,7 +16,7 @@
       "remitente": "juan.perez@gmail.com",
       "nombre_remitente": "Juan Pérez",
       "asunto": "URGENTE: Verifica tu cuenta estudiantil",
-      "contenido": "Hola Alejandro,\n\nDebe verificar su cuenta estudiantil INMEDIATAMENTE o será suspendida. Haga clic aquí para verificar: www.geniosfuturo-verificacion.com\n\nIngrese su contraseña y datos personales.\n\nSaludos urgentes,\nJuan Pérez",
+      "contenido": "Hola Alejandro,<br/>Debe verificar su cuenta estudiantil INMEDIATAMENTE o será suspendida. Haga clic aquí para verificar: www.geniosfuturo-verificacion.com\n\nIngrese su contraseña y datos personales.\n\nSaludos urgentes,\nJuan Pérez",
       "enlaces": ["www.geniosfuturo-verificacion.com"],
       "nivel_dificultad": "facil"
     },
@@ -36,7 +36,7 @@
       "remitente": "admin@geniosfuturo.co",
       "nombre_remitente": "Administrador",
       "asunto": "¡Felicidades! Has ganado una beca",
-      "contenido": "¡FELICIDADES ALEJANDRO!\n\nHAS SIDO SELECCIONADO para una beca de $500.000. Para reclamar tu premio, envía los datos de la tarjeta de crédito de tus padres.\n\n¡ACTÚA RÁPIDO! Esta oferta expira en 24 horas.\n\nClick aquí: www.beca-genios.net",
+      "contenido": "¡FELICIDADES ALEJANDRO!<br/>HAS SIDO SELECCIONADO para una beca de $500.000. Para reclamar tu premio, envía los datos de la tarjeta de crédito de tus padres.\n\n¡ACTÚA RÁPIDO! Esta oferta expira en 24 horas.\n\nClick aquí: www.beca-genios.net",
       "enlaces": ["www.beca-genios.net"],
       "nivel_dificultad": "medio"
     },
