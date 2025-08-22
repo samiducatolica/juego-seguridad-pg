@@ -6,6 +6,22 @@
     max-width: 800px;
     margin: 2rem auto;
     text-align: left;
+    position: relative; /* Add this */
+}
+
+.score-counter {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #f8f9fa;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.score-counter div {
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .phishing-intro p {

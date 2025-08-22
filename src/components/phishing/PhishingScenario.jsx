@@ -9,6 +9,7 @@ const PhishingScenario = ({onBack}) => {
     const [gameState, setGameState] = useState('intro'); // intro, playing, finished
     const [currentEmailIndex, setCurrentEmailIndex] = useState(0);
     const [score, setScore] = useState(0);
+    const [incorrectScore, setIncorrectScore] = useState(0);
     const [feedback, setFeedback] = useState({message: '', type: ''}); // type: correct, incorrect
     const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 
@@ -24,6 +25,7 @@ const PhishingScenario = ({onBack}) => {
             setScore(score + 1);
             setFeedback({message: '¡Correcto! Buen trabajo, detective.', type: 'correct'});
         } else {
+            setIncorrectScore(incorrectScore + 1);
             setFeedback({message: '¡Cuidado! Este correo era ' + currentEmail.tipo + '.', type: 'incorrect'});
         }
 
@@ -34,7 +36,7 @@ const PhishingScenario = ({onBack}) => {
             } else {
                 setGameState('finished');
             }
-        }, 8000);
+        }, 1000);
     };
 
     const handleConfirmBack = () => {
@@ -72,6 +74,7 @@ const PhishingScenario = ({onBack}) => {
                 {confirmationModal}
                 <h2>¡Juego Terminado!</h2>
                 <p>Tu puntuación final es: {score} de {emailData.emails.length}</p>
+                <p>Respuestas incorrectas: {incorrectScore}</p>
                 <button onClick={() => setIsConfirmModalOpen(true)} className="scenario-btn back-btn">Volver al Menú
                 </button>
             </div>
@@ -81,6 +84,10 @@ const PhishingScenario = ({onBack}) => {
     return (
         <div className="phishing-container">
             {confirmationModal}
+            <div className="score-counter">
+                <div>Correctas: {score}</div>
+                <div>Incorrectas: {incorrectScore}</div>
+            </div>
             <h2>Correo {currentEmailIndex + 1} de {emailData.emails.length}</h2>
             <div className="email-container">
                 <div className="email-header">
