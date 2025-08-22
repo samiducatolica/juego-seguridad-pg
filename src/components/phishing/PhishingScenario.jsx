@@ -52,7 +52,8 @@ const PhishingScenario = ({onBack}) => {
         >
             <div className="menu-buttons-back">
                 <button onClick={handleConfirmBack} className="scenario-btn phishy-btn">Sí, Salir</button>
-                <button onClick={() => setIsConfirmModalOpen(false)} className="scenario-btn safe-btn">No, Quedarse</button>
+                <button onClick={() => setIsConfirmModalOpen(false)} className="scenario-btn safe-btn">No, Quedarse
+                </button>
             </div>
             <p>Si sales ahora, perderás tu progreso en este escenario.</p>
         </Modal>
@@ -73,9 +74,11 @@ const PhishingScenario = ({onBack}) => {
             <div className="phishing-container">
                 {confirmationModal}
                 <h2>¡Juego Terminado!</h2>
-                <p>Tu puntuación final es: {score} de {emailData.emails.length}</p>
-                <p>Respuestas incorrectas: {incorrectScore}</p>
-                <button onClick={() => setIsConfirmModalOpen(true)} className="scenario-btn back-btn">Volver al Menú
+                <div className="final-phishing">
+                    <p>Tu puntuación final es: {score} de {emailData.emails.length}</p>
+                    <p>Respuestas incorrectas: {incorrectScore}</p>
+                </div>
+                <button onClick={() => setIsConfirmModalOpen(true)} className="scenario-btn back-btn">Ir al Menú
                 </button>
             </div>
         );
@@ -94,8 +97,9 @@ const PhishingScenario = ({onBack}) => {
                     <p><strong>De:</strong> {currentEmail.nombre_remitente} &lt;{currentEmail.remitente}&gt;</p>
                     <p><strong>Asunto:</strong> {currentEmail.asunto}</p>
                 </div>
-                <div className="email-body" dangerouslySetInnerHTML={{ __html: currentEmail.contenido.replace(/\n/g, '<br />') }}
-/>
+                <div className="email-body"
+                     dangerouslySetInnerHTML={{__html: currentEmail.contenido.replace(/\n/g, '<br />')}}
+                />
             </div>
 
             <div className="email-actions">
