@@ -47,11 +47,6 @@ const PhishingScenario = ({onBack}) => {
             isOpen={isConfirmModalOpen}
             onClose={() => setIsConfirmModalOpen(false)}
             title="¿Estás seguro?"
-            // actions=(
-            //             <button onClick={handleConfirmBack} className="scenario-btn phishy-btn">Sí, Salir</button>
-            //             <button onClick={() => setIsConfirmModalOpen(false)} className="scenario-btn safe-btn">No, Quedarse</button>
-            //
-            // )
         >
             <div className="menu-buttons-back">
                 <button onClick={handleConfirmBack} className="scenario-btn phishy-btn">Sí, Salir</button>
@@ -104,7 +99,7 @@ const PhishingScenario = ({onBack}) => {
             </div>
 
             {feedback.message && (
-                <div className={`feedback {feedback.type}`}>
+                <div className={`feedback ${feedback.type}`}>
                     {feedback.message}
                 </div>
             )}
