@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import Modal from './Modal.jsx';
 import './ScenarioIntro.css'; // Re-using styles
+import dukeMeditation from '../../assets/images/character/Dujke_meditando.png';
 
 const ShellContext = ({ markdownContent, onStart, onBack }) => {
     const [isModalOpen, setIsModalOpen] = useState(true);
@@ -76,6 +77,7 @@ const ShellContext = ({ markdownContent, onStart, onBack }) => {
 
     return (
         <div className="intro-container">
+            <img src={dukeMeditation} alt="Duke meditando" className="character-intro"/>
             <TypeAnimation
                 key={currentPage} // Force re-animation on page change
                 sequence={[
@@ -88,7 +90,7 @@ const ShellContext = ({ markdownContent, onStart, onBack }) => {
                 className="intro-text"
                 cursor={true}
                 repeat={0}
-                speed={100}
+                speed={80}
             />
             {isAnimationFinished && (
                 <div className="intro-actions">

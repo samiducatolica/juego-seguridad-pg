@@ -40,3 +40,8 @@
 
 }
 
+.character-intro{
+    max-width: 199px; /* Aumentado un 15% desde 173px */
+    margin-bottom: 0;
+    background-color: white; /* Asegura que el fondo sea blanco detrás de la imagen */
+}
