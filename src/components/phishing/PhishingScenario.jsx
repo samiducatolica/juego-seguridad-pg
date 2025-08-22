@@ -32,7 +32,7 @@ const PhishingScenario = ({ onBack }) => {
             } else {
                 setGameState('finished');
             }
-        }, 5000);
+        }, 8000);
     };
 
     if (gameState === 'intro') {
@@ -74,7 +74,7 @@ const PhishingScenario = ({ onBack }) => {
             </div>
 
             {feedback.message && (
-                <div className={`feedback {feedback.type}`}>
+                <div className={`feedback ${feedback.type}`}>
                     {feedback.message}
                 </div>
             )}

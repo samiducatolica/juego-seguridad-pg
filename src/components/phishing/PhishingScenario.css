@@ -1,95 +1,100 @@
 .phishing-container {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: 2rem auto;
-  text-align: left;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: left;
 }
 
 .phishing-intro p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
 .email-container {
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-top: 1.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .email-header {
-  border-bottom: 1px solid #dee2e6;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .email-header strong {
-  color: #495057;
+    color: #495057;
 }
 
 .email-body {
-  line-height: 1.7;
+    line-height: 1.7;
 }
 
 .email-actions {
-  margin-top: 2rem;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .action-btn {
-  padding: 12px 20px;
-  font-size: 1.1em;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 150px;
-  box-sizing: border-box;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+    box-sizing: border-box;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .safe-btn {
-  background-color: #28A745; /* VERDE-EXITO */
-  color: white;
+    background-color: #28A745; /* VERDE-EXITO */
+    color: white;
 }
 
 .safe-btn:hover {
-  background-color: #218838;
+    background-color: #218838;
 }
 
 .phishy-btn {
-  background-color: #DC3545; /* ROJO-ERROR */
-  color: white;
+    background-color: #DC3545; /* ROJO-ERROR */
+    color: white;
 }
 
 .phishy-btn:hover {
-  background-color: #c82333;
+    background-color: #c82333;
 }
 
 .feedback {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  border-radius: 5px;
-  text-align: center;
-  font-weight: bold;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid;
 }
 
 .feedback.correct {
-  background-color: #d4edda;
-  color: #155724;
+    background-color: #28A745; /* VERDE-EXITO */
+    border-color: #218838; /* Darker Green */
+    color: #ffffff;
 }
 
 .feedback.incorrect {
-  background-color: #f8d7da;
-  color: #721c24;
+    background-color: #FFC107; /* AMARILLO-ADVERTENCIA */
+    border-color: #d39e00; /* Darker Yellow */
+    color: #343A40; /* TEXTO-PRINCIPAL */
 }
