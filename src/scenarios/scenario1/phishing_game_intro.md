@@ -1,6 +1,6 @@
-# 🛡️ ¡Bienvenido al Detector de Correos Falsos! 🛡️
+🛡️ ¡Bienvenido al Detector de Correos Falsos! 🛡️
 
-**¡Hola {{NOMBRE_APELLIDO}}!**
+¡Hola {{NOMBRE_APELLIDO}}! \n
 ¡Bienvenido al emocionante mundo del **Detector de Correos Falsos**! Aquí aprenderás a identificar correos electrónicos reales y a detectar intentos de **phishing**.
 Tu misión es proteger tu información y la de tus compañeros del **Colegio Ciber Genios del Futuro**.
 
@@ -12,7 +12,7 @@ Eres estudiante de 5° grado en el **Colegio Ciber Genios del Futuro** y tienes 
 - **Tu correo:** {{CORREO_USUARIO}}@geniosfuturo.edu.co
 - **Dominio oficial:** @geniosfuturo.edu.co
 
-### 👨‍🏫 **Tus Profesores:**
+## 👨‍🏫 **Tus Profesores:**
 - Juan Pérez: juan.perez@geniosfuturo.edu.co
 - María Fernanda Rodríguez: mariaf.rodriguez@geniosfuturo.edu.co
 - Esteban Andrés Medina: eandres.medina@geniosfuturo.edu.co
@@ -29,25 +29,25 @@ Recibirás diferentes correos electrónicos. Tu misión es decidir si cada corre
 
 Antes de decidir si un correo es real o falso, revisa estos elementos importantes:
 
-### 1. **Verifica el Remitente**
+### Consejo 1. **Verifica el Remitente**
 - ¿El correo viene de un profesor conocido?
 - ¿La dirección de correo termina en @geniosfuturo.edu.co?
 - ¿El nombre del remitente coincide con los profesores de tu colegio?
 
-### 2. **Analiza el Contenido**
+### Consejo 2. **Analiza el Contenido**
 - ¿El mensaje suena como algo que diría tu profesor?
 - ¿Te pide información personal como contraseñas o datos privados?
 - ¿Hay errores de ortografía o palabras extrañas?
 
-### 3. **Examina los Enlaces**
+### Consejo 3. **Examina los Enlaces**
 - ¿Los enlaces van a páginas del colegio?
 - ¿Te piden hacer clic urgentemente en algún enlace sospechoso?
 
-### 4. **Detecta la Urgencia Falsa**
+### Consejo 4. **Detecta la Urgencia Falsa**
 - ¿El correo dice que debes actuar "INMEDIATAMENTE"?
 - ¿Amenaza con cerrar tu cuenta o castigarte si no respondes rápido?
 
-### 5. **Solicitudes Sospechosas**
+### Consejo 5. **Solicitudes Sospechosas**
 - ¿Te piden tu contraseña, número de documento o información de tus padres?
 - ¿Te piden dinero o información bancaria?
 
