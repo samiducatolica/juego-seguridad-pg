@@ -1,0 +1,34 @@
+{
+  "escenarios": [
+    {
+      "id": 1,
+      "nombre": "phishing",
+      "icon": "📧",
+      "dificultad": "Principiante",
+      "titulo": "PhishGuard: Cazadores de Engaños",
+      "descripcion": "<p>Los estudiantes reciben emails sospechosos. Ayúdalos a identificar correos de phishing, proteger sus cuentas y reportar intentos de fraude antes de que caigan en la trampa.</p>",
+      "estadisticas": [
+        {
+          "tiempo": "15-20 min",
+          "tipo": "Estrategia",
+          "objetivo": "Email Seguro"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "ransomware",
+      "icon": "🏫",
+      "dificultad": "Intermedio",
+      "titulo": "RansomRaiders: Rescata el Colegio",
+      "descripcion": "<p>Un ransomware ha infectado la red del colegio. Trabaja como especialista en ciberseguridad para contener la infección, encontrar la clave de descifrado y restaurar los sistemas desde los backups.</p>",
+      "estadisticas": [
+        {
+          "tiempo": "20-30 min",
+          "tipo": "Estrategia",
+          "objetivo": "Backup y Prevención"
+        }
+      ]
+    }
+  ]
+}
