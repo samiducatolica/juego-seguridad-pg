@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import './App.css';
 import dukeInicio from './assets/images/character/Duke_inicio.png';
 import PhishingScenario from './components/phishing/PhishingScenario.jsx';
 
 // Componente provisional para el Escenario de Ransomware
-const RansomwareScenario = ({ onBack }) => (
+const RansomwareScenario = ({onBack}) => (
     <div>
         <h2>Ransomware Scenario</h2>
         <p>This is where the ransomware game will be.</p>
@@ -13,7 +13,7 @@ const RansomwareScenario = ({ onBack }) => (
 );
 
 // Componente provisional para el Escenario de Contraseñas Seguras
-const SecurePasswordsScenario = ({ onBack }) => (
+const SecurePasswordsScenario = ({onBack}) => (
     <div>
         <h2>Secure Passwords Scenario</h2>
         <p>This is where the secure passwords game will be.</p>
@@ -22,7 +22,7 @@ const SecurePasswordsScenario = ({ onBack }) => (
 );
 
 // Componente provisional para el cuarto escenario
-const ComingSoonScenario = ({ onBack }) => (
+const ComingSoonScenario = ({onBack}) => (
     <div>
         <h2>Coming Soon!</h2>
         <p>This scenario is under construction.</p>
@@ -31,10 +31,10 @@ const ComingSoonScenario = ({ onBack }) => (
 );
 
 
-const Menu = ({ onSelectScenario }) => {
+const Menu = ({onSelectScenario}) => {
     return (
         <div className="menu-container">
-            <img src={dukeInicio} alt="Duke Character" className="character-image" />
+            <img src={dukeInicio} alt="Duke Character" className="character-image"/>
             <h1>CyberSafe Kids</h1>
             <div className="scenario-buttons">
                 <button onClick={() => onSelectScenario('phishing')} className="scenario-btn">
@@ -54,6 +54,9 @@ const Menu = ({ onSelectScenario }) => {
     );
 };
 
+import Header from './components/header/Header.jsx';
+import Footer from "./components/footer/Footer.js";
+
 function App() {
     const [currentScenario, setCurrentScenario] = useState(null);
 
@@ -68,22 +71,24 @@ function App() {
     const renderScenario = () => {
         switch (currentScenario) {
             case 'phishing':
-                return <PhishingScenario onBack={handleBackToMenu} />;
+                return <PhishingScenario onBack={handleBackToMenu}/>;
             case 'ransomware':
-                return <RansomwareScenario onBack={handleBackToMenu} />;
+                return <RansomwareScenario onBack={handleBackToMenu}/>;
             case 'passwords':
-                return <SecurePasswordsScenario onBack={handleBackToMenu} />;
+                return <SecurePasswordsScenario onBack={handleBackToMenu}/>;
             case 'coming_soon':
-                return <ComingSoonScenario onBack={handleBackToMenu} />;
+                return <ComingSoonScenario onBack={handleBackToMenu}/>;
             default:
-                return <Menu onSelectScenario={handleScenarioSelect} />;
+                return <Menu onSelectScenario={handleScenarioSelect}/>;
         }
     };
 
     return (
-        <main>
+        <div className="main-container">
+            <Header inScenario={currentScenario !== null}/>
             {renderScenario()}
-        </main>
+            <Footer inScenario={currentScenario !== null}/>
+        </div>
     );
 }
 
