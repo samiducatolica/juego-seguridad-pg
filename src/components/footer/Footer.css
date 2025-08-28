@@ -1,0 +1,11 @@
+.game-footer{
+    background: rgba(0,0,0,0.4);
+    padding: 20px 40px;
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(0,212,255,0.2);
+    text-align: center;
+}
+.footer-info{
+    font-size: 12px;
+    color: #999;
+}
