@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import './App.css';
-import dukeInicio from './assets/images/character/Duke_inicio.png';
 import PhishingScenario from './components/phishing/PhishingScenario.jsx';
+import Menu from './components/menu/Menu.tsx'
 
 // Componente provisional para el Escenario de Ransomware
 const RansomwareScenario = ({onBack}) => (
@@ -31,31 +31,9 @@ const ComingSoonScenario = ({onBack}) => (
 );
 
 
-const Menu = ({onSelectScenario}) => {
-    return (
-        <div className="menu-container">
-            <img src={dukeInicio} alt="Duke Character" className="character-image"/>
-            <h1>CyberSafe Kids</h1>
-            <div className="scenario-buttons">
-                <button onClick={() => onSelectScenario('phishing')} className="scenario-btn">
-                    Phishing
-                </button>
-                <button onClick={() => onSelectScenario('ransomware')} className="scenario-btn secondary" disabled>
-                    Ransomware (Coming Soon)
-                </button>
-                <button onClick={() => onSelectScenario('passwords')} className="scenario-btn secondary" disabled>
-                    Secure Passwords (Coming Soon)
-                </button>
-                <button onClick={() => onSelectScenario('coming_soon')} className="scenario-btn secondary" disabled>
-                    Mystery Scenario (Coming Soon)
-                </button>
-            </div>
-        </div>
-    );
-};
 
 import Header from './components/header/Header.jsx';
-import Footer from "./components/footer/Footer.js";
+import Footer from "./components/footer/Footer.tsx";
 
 function App() {
     const [currentScenario, setCurrentScenario] = useState(null);
