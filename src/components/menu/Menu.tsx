@@ -62,6 +62,7 @@ const Menu = ({onSelectScenario}) => {
                     ))}
                 </div>
             </div>
+            {/*<div className="side-panel"></div>*/}
         </div>
     );
 };
