@@ -29,7 +29,7 @@ const Escenario = ({escenarioInfo, onSelectScenario}) => {
              onClick={
                  () => onSelectScenario(escenarioInfo.nombre)
              }>
-            <div className={"scenario-header"}>
+            <div className={"scenario-main-header"}>
                 <div className="scenario-icon">{escenarioInfo.icon}</div>
                 <div
                     className={`difficulty-badge difficulty-${escenarioInfo.dificultad.toLowerCase()}`}>{escenarioInfo.dificultad}</div>
