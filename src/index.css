@@ -12,3 +12,31 @@ body {
     min-height: 100vh;
 
 }
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .scenarios-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .title-text h1 {
+        font-size: 24px;
+    }
+
+    .logo {
+        font-size: 36px;
+    }
+}
