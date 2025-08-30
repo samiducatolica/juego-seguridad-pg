@@ -124,8 +124,8 @@ const ShellContext = ({markdownContent, onStart, onBack}) => {
                             )}
                             {currentPage === processedContent.length - 1 && (
                                 <>
-                                    <button onClick={onStart} className="continue-btn">Comenzar Juego</button>
-                                    <button onClick={onBack} className="continue-btn">Volver al Menú
+                                    <button onClick={onStart} className="continue-btn">🏁 Comenzar Juego</button>
+                                    <button onClick={onBack} className="continue-btn">🪧 Volver al Menú
                                     </button>
                                 </>
                             )}
