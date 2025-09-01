@@ -88,10 +88,10 @@ const PhishingScenario = ({onBack}) => {
         <div className="phishing-container">
             {confirmationModal}
             <div className="score-counter">
-                <div>Correctas: {score}</div>
-                <div>Incorrectas: {incorrectScore}</div>
+                <div className="correct-answer">Correctas: {score}</div>
+                <div className="incorrect-answer">Incorrectas: {incorrectScore}</div>
             </div>
-            <h2>Correo {currentEmailIndex + 1} de {emailData.emails.length}</h2>
+            <h2 className="mail-counter">Correo {currentEmailIndex + 1} de {emailData.emails.length}</h2>
             <div className="email-container">
                 <div className="email-header">
                     <p><strong>De:</strong> {currentEmail.nombre_remitente} &lt;{currentEmail.remitente}&gt;</p>
@@ -103,9 +103,9 @@ const PhishingScenario = ({onBack}) => {
             </div>
 
             <div className="email-actions">
-                <button onClick={() => handleAnswer('falso')} className="action-btn phishy-btn">Es Falso (Phishing)
+                <button onClick={() => handleAnswer('falso')} className="action-btn phishy-btn">❌ Es Falso (Phishing)
                 </button>
-                <button onClick={() => handleAnswer('real')} className="action-btn safe-btn">Es Real</button>
+                <button onClick={() => handleAnswer('real')} className="action-btn safe-btn">✔️ Es Real</button>
             </div>
 
             {feedback.message && (
@@ -113,7 +113,7 @@ const PhishingScenario = ({onBack}) => {
                     {feedback.message}
                 </div>
             )}
-            <button onClick={() => setIsConfirmModalOpen(true)} className="scenario-btn back-btn">Volver al Menú
+            <button onClick={() => setIsConfirmModalOpen(true)} className="scenario-btn back-btn">🪧 Volver al Menú
             </button>
         </div>
     );
