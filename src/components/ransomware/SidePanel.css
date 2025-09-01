@@ -1,0 +1,49 @@
+
+.side-panel {
+    padding: 20px;
+    background-color: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.clues-section, .tools-section, .event-log {
+    background-color: #3a3a3a;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.clues-title, .tools-title, .log-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.clues-progress {
+    display: flex;
+    gap: 10px;
+}
+
+.clue-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #636e72;
+    border-radius: 50%;
+}
+
+.clue-dot.found {
+    background-color: #00ff88;
+}
+
+.tool-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.log-entry {
+    padding: 5px 0;
+    border-bottom: 1px solid #444;
+}
+
+.log-entry.warning { color: #fdcb6e; }
+.log-entry.danger { color: #ff7675; }

@@ -6,14 +6,7 @@ import Header from './components/header/Header.jsx';
 import Footer from "./components/footer/Footer.tsx";
 
 
-// Componente provisional para el Escenario de Ransomware
-const RansomwareScenario = ({onBack}) => (
-    <div>
-        <h2>Ransomware Scenario</h2>
-        <p>This is where the ransomware game will be.</p>
-        <button onClick={onBack} className="scenario-btn back-btn">Go Back</button>
-    </div>
-);
+import RansomwareScenario from './components/ransomware/RansomwareScenario.jsx';
 
 // Componente provisional para el Escenario de Contraseñas Seguras
 const SecurePasswordsScenario = ({onBack}) => (

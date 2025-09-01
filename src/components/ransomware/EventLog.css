@@ -1,0 +1,31 @@
+
+.event-log-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.event-log-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.log-entry {
+    padding: 5px;
+    border-bottom: 1px solid #444;
+}
+
+.log-turn {
+    font-weight: bold;
+}
+
+.log-success { color: #55efc4; }
+.log-failure { color: #ff7675; }
+.log-info { color: #74b9ff; }
+.log-warning { color: #fdcb6e; }

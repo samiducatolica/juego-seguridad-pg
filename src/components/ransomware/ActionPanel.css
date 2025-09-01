@@ -1,0 +1,59 @@
+.action-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2a2a2a;
+}
+
+.actions-container {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.action-btn:hover:not(:disabled) {
+    background-color: #74b9ff;
+}
+
+.action-btn.danger {
+    background-color: #d63031;
+}
+
+.action-btn.danger:hover:not(:disabled) {
+    background-color: #ff7675;
+}
+
+.action-btn:disabled {
+    background-color: #636e72;
+    cursor: not-allowed;
+}
+
+.game-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #b2bec3;
+}

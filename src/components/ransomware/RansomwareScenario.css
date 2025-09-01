@@ -1,0 +1,89 @@
+.game-container {
+    display: grid;
+    grid-template-areas:
+        'header header'
+        'board side'
+        'footer footer';
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+.gamer-header {
+    grid-area: header;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    margin: 0.6rem;
+}
+.gamer-board {
+    grid-area: board;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+.gamer-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.ransomware-tracker {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.threat-level {
+    background: #ff4444;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-weight: bold;
+    animation: pulse 3s infinite;
+}
+@keyframes pulse {
+    0%, 100%{opacity: 1;}
+    50%{opacity: 0.7;}
+}
+.progress-ring {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: conic-gradient(#ff4444 0deg 72deg, #333 72deg 360deg);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.progress-ring::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #1e3c72;
+    border-radius: 50%;
+}
+
+.progress-text {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Otras Secciones*/
+.sider-panel { grid-area: side; }
+.actionr-panel { grid-area: footer; }
+
+
+
+
