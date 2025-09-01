@@ -2,6 +2,9 @@ import {useState} from 'react';
 import './App.css';
 import PhishingScenario from './components/phishing/PhishingScenario.jsx';
 import Menu from './components/menu/Menu.tsx'
+import Header from './components/header/Header.jsx';
+import Footer from "./components/footer/Footer.tsx";
+
 
 // Componente provisional para el Escenario de Ransomware
 const RansomwareScenario = ({onBack}) => (
@@ -29,11 +32,6 @@ const ComingSoonScenario = ({onBack}) => (
         <button onClick={onBack} className="scenario-btn back-btn">Go Back</button>
     </div>
 );
-
-
-
-import Header from './components/header/Header.jsx';
-import Footer from "./components/footer/Footer.tsx";
 
 function App() {
     const [currentScenario, setCurrentScenario] = useState(null);

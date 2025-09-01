@@ -3,8 +3,10 @@ import {TypeAnimation} from 'react-type-animation';
 import Modal from './Modal.jsx';
 import './ScenarioIntro.css'; // Re-using styles
 import dukeMeditation from '../../assets/images/character/Dujke_meditando.png';
+import scenarios from '../../scenarios/menu/escenarios_list.json';
 
-const ShellContext = ({markdownContent, onStart, onBack}) => {
+
+const ShellContext = ({gameId, onStart, onBack}) => {
     const [isModalOpen, setIsModalOpen] = useState(true);
     const [userData, setUserData] = useState(null);
     const [processedContent, setProcessedContent] = useState([]); // Will be an array of pages
@@ -12,6 +14,9 @@ const ShellContext = ({markdownContent, onStart, onBack}) => {
     const [isAnimationFinished, setIsAnimationFinished] = useState(false);
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
+    const scenario = scenarios.escenarios.find(s => s.id === gameId);
+    // const markdownContent = scenario ? scenario['intro-game'] : '';
+
 
     const handleUserSubmit = (name, lastName) => {
         const fullName = `${name} ${lastName}`;
@@ -29,7 +34,7 @@ const ShellContext = ({markdownContent, onStart, onBack}) => {
 
     useEffect(() => {
         if (userData) {
-            const personalizedContent = markdownContent
+            const personalizedContent = scenario.contexto
                 .replace(/\{\{NOMBRE_APELLIDO\}\}/g, userData.fullName)
                 .replace(/\{\{CORREO_USUARIO\}\}/g, userData.email);
 
@@ -37,7 +42,7 @@ const ShellContext = ({markdownContent, onStart, onBack}) => {
             console.log('Processed Pages:', pages); // Debugging output
             setProcessedContent(pages);
         }
-    }, [userData, markdownContent]);
+    }, [userData]);
 
     if (isModalOpen) {
         return (
@@ -78,10 +83,10 @@ const ShellContext = ({markdownContent, onStart, onBack}) => {
         <div className="intro-container">
             <div className="scenario-header">
                 <h1 className="scenario-title">
-                    <span className="scenario-icon">📧</span>
-                    PhishGuard: Cazadores de Engaños
+                    <span className="scenario-icon">{scenario.icon}</span>
+                    {scenario.titulo}
                 </h1>
-                <p className="scenario-subtitle">Misión de Seguridad Digital - Nivel Principiante</p>
+                <p className="scenario-subtitle">{scenario.subtitulo}</p>
             </div>
 
             <div className="intro-content">
@@ -90,7 +95,7 @@ const ShellContext = ({markdownContent, onStart, onBack}) => {
                     <div className="character-avatar">
                         <img src={dukeMeditation} alt="Dujke Meditando" className="character-image"/>
                     </div>
-                    <div className="character-name">samid barrera</div>
+                    <div className="character-name">{name} {lastName}</div>
                     <div className="character-role">Especialista en Ciberseguridad<p>Detective Digital</p></div>
                 </div>
 
@@ -156,8 +161,6 @@ const ShellContext = ({markdownContent, onStart, onBack}) => {
                     <div className="stat-value">Detectar Phishing</div>
                 </div>
             </div>
-
-            {/*<div className="continue-section"></div>*/}
 
         </div>
     );

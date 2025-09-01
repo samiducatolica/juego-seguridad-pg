@@ -1,4 +1,4 @@
-import scenariosJson from "../../scenarios/menu/escenarios_list.json";
+import scenariosJson from '../../scenarios/menu/escenarios_list.json';
 import './Menu.css';
 
 

@@ -2,7 +2,6 @@ import {useState} from 'react';
 import './PhishingScenario.css';
 import emailData from '../../scenarios/scenario1/phishing_emails_dataset.json';
 import ShellContext from '../shared/ShellContext.jsx';
-import introContent from '../../scenarios/scenario1/phishing_game_intro.md?raw';
 import Modal from '../shared/Modal.jsx';
 
 const PhishingScenario = ({onBack}) => {
@@ -62,7 +61,7 @@ const PhishingScenario = ({onBack}) => {
     if (gameState === 'intro') {
         return (
             <ShellContext
-                markdownContent={introContent}
+                gameId={1}
                 onStart={handleStartGame}
                 onBack={onBack}
             />
