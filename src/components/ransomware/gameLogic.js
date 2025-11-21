@@ -11,7 +11,7 @@ export const initialState = {
   ransomwareProgress: 0,
   threatLevel: 1,
   playerResources: {
-    tools: { antivirus: 2, firewall: 1, scanner: 1 },
+    tools: { antivirus: 3, firewall: 3, scanner: 2 },
     cluesFound: 0,
     hasDecryptionKey: false
   },
@@ -34,7 +34,7 @@ const logEvent = (state, message, type = 'info') => {
 const containSector = (state, sectorId) => {
   const sector = state.sectors.find(s => s.id === sectorId);
   const difficulty = state.difficulty;
-  const successThreshold = difficulty === 'escolar' ? 4 : 5;
+  const successThreshold = difficulty === 'escolar' ? 3 : 5;
   
   const diceRoll = rollDice();
   
@@ -56,7 +56,7 @@ const analyzeSector = (state, sectorId) => {
 
   const diceRoll = rollDice();
 
-  if (diceRoll === 6) {
+  if (diceRoll >= 5) {
     const newClues = state.playerResources.cluesFound + 1;
     let newState = { ...state, playerResources: { ...state.playerResources, cluesFound: newClues } };
     
@@ -83,7 +83,7 @@ const restoreSector = (state, sectorId) => {
   }
 
   const difficulty = state.difficulty;
-  const successThreshold = difficulty === 'escolar' ? 4 : 5;
+  const successThreshold = difficulty === 'escolar' ? 3 : 5;
   const diceRoll = rollDice();
 
   if (diceRoll >= successThreshold) {
@@ -143,7 +143,7 @@ const selectRandomEvent = (events) => {
 };
 
 const advanceRansomwareTracker = (state) => {
-  return { ...state, ransomwareProgress: Math.min(state.ransomwareProgress + 5, 100) };
+  return { ...state, ransomwareProgress: Math.min(state.ransomwareProgress + 3, 100) };
 };
 
 const triggerGameOver = (state, message) => {
@@ -193,7 +193,7 @@ const propagationPhase = (state) => {
   infectedSectors.forEach(sector => {
     const diceRoll = rollDice();
     
-    if (diceRoll >= 5) { // Propagación exitosa
+    if (diceRoll >= 6) { // Propagación exitosa
       const connectedSectors = sector.connections;
       const targetableSectors = newState.sectors.filter(s => connectedSectors.includes(s.id) && !s.hasFirewall && s.infectionLevel === 0);
 

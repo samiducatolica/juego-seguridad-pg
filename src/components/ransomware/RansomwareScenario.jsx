@@ -12,6 +12,7 @@ const RansomwareScenario = ({ onBack }) => {
   return (
     <div className="gamer-container">
         <header className="gamer-header">
+            <button onClick={onBack} className="back-to-menu-btn">← Menú Principal</button>
             <h1 className="gamer-title">🏫 RansomRaiders: Rescata los Datos del Colegio</h1>
             <div className="ransomware-tracker">
                 <div className="threat-level">⚠️ AMENAZA NIVEL {gameState.threatLevel}</div>

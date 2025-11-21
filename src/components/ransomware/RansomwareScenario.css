@@ -1,12 +1,12 @@
-.game-container {
+.gamer-container {
     display: grid;
+    flex: 1;
     grid-template-areas:
         'header header'
         'board side'
         'footer footer';
     grid-template-columns: 3fr 1fr;
     grid-template-rows: auto 1fr auto;
-    height: 100vh;
 }
 .gamer-header {
     grid-area: header;
@@ -32,7 +32,25 @@
     font-weight: bold;
     color: #00d4ff;
     text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    margin-left: auto; /* Push title to the right, next to the button */
 }
+
+.back-to-menu-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-right: 20px; /* Space between button and title */
+}
+
+.back-to-menu-btn:hover {
+    background-color: #0056b3;
+}
+
 
 .ransomware-tracker {
     display:flex;
