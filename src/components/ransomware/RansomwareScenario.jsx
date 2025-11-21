@@ -36,6 +36,19 @@ const RansomwareScenario = ({ onBack }) => {
     </Modal>
   );
 
+  const hintModal = (
+    <Modal
+        isOpen={gameState.hintModal.isOpen}
+        onClose={() => dispatch({ type: 'CLOSE_HINT_MODAL' })}
+        title="💡 Pista del Sistema"
+    >
+        <p>{gameState.hintModal.message}</p>
+        <div className="modal-actions">
+            <button onClick={() => dispatch({ type: 'CLOSE_HINT_MODAL' })} className="scenario-btn">Entendido</button>
+        </div>
+    </Modal>
+  );
+
   if (internalGameState === 'intro') {
     return (
       <ShellContext
@@ -49,6 +62,7 @@ const RansomwareScenario = ({ onBack }) => {
   return (
     <div className="gamer-container">
         {confirmationModal}
+        {hintModal}
         <header className="gamer-header">
             <button onClick={() => setIsConfirmModalOpen(true)} className="back-to-menu-btn">← Menú Principal</button>
             <h1 className="gamer-title">🏫 RansomRaiders: Rescata los Datos del Colegio</h1>

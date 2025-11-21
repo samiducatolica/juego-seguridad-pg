@@ -1,12 +1,10 @@
 
 export const initialState = {
   sectors: [
-    { id: 'biblioteca', name: 'Biblioteca Digital', icon: '📚', infectionLevel: 0, hasBackup: true, hasFirewall: false, connections: ['laboratorio', 'calificaciones'], isSelected: false },
+    { id: 'biblioteca', name: 'Biblioteca Digital', icon: '📚', infectionLevel: 1, hasBackup: true, hasFirewall: false, connections: ['laboratorio', 'calificaciones'], isSelected: false },
     { id: 'laboratorio', name: 'Laboratorio de PC', icon: '💻', infectionLevel: 0, hasBackup: true, hasFirewall: false, connections: ['biblioteca', 'servidor-principal'], isSelected: false },
     { id: 'calificaciones', name: 'Sistema de Calificaciones', icon: '📝', infectionLevel: 0, hasBackup: true, hasFirewall: false, connections: ['biblioteca', 'servidor-principal'], isSelected: false },
-    { id: 'servidor-principal', name: 'Servidor Principal', icon: '🗄️', infectionLevel: 0, hasBackup: false, hasFirewall: false, connections: ['laboratorio', 'calificaciones', 'administrativo'], isSelected: false },
-    { id: 'administrativo', name: 'Oficinas Administrativas', icon: '💼', infectionLevel: 0, hasBackup: true, hasFirewall: false, connections: ['servidor-principal', 'red-invitados'], isSelected: false },
-    { id: 'red-invitados', name: 'Red de Invitados', icon: '📶', infectionLevel: 0, hasBackup: false, hasFirewall: false, connections: ['administrativo'], isSelected: false }
+    { id: 'servidor-principal', name: 'Servidor Principal', icon: '🗄️', infectionLevel: 0, hasBackup: true, hasFirewall: false, connections: ['laboratorio', 'calificaciones'], isSelected: false }
   ],
   ransomwareProgress: 0,
   threatLevel: 1,
@@ -21,7 +19,9 @@ export const initialState = {
   selectedSector: null,
   difficulty: 'escolar',
   timeElapsed: 0,
-  eventLog: []
+  turnsSinceRansomwareAdvance: 0, // New state variable
+  eventLog: [],
+  hintModal: { isOpen: false, message: '' }
 };
 
 const rollDice = () => Math.floor(Math.random() * 6) + 1;
@@ -34,8 +34,19 @@ const logEvent = (state, message, type = 'info') => {
 const containSector = (state, sectorId) => {
   const sector = state.sectors.find(s => s.id === sectorId);
   const difficulty = state.difficulty;
-  const successThreshold = difficulty === 'escolar' ? 3 : 5;
   
+  if (difficulty === 'escolar') {
+    if (Math.random() <= 0.65) { // 65% success rate
+      const newSectors = state.sectors.map(s => s.id === sectorId ? { ...s, hasFirewall: true } : s);
+      let newState = { ...state, sectors: newSectors };
+      return logEvent(newState, `✅ Firewall colocado en ${sector.name}`, 'success');
+    } else {
+      return logEvent(state, `❌ Fallo al contener ${sector.name}`, 'failure');
+    }
+  }
+
+  // Original logic for other difficulties
+  const successThreshold = 5;
   const diceRoll = rollDice();
   
   if (diceRoll >= successThreshold) {
@@ -54,17 +65,42 @@ const analyzeSector = (state, sectorId) => {
     return logEvent(state, `El análisis requiere que el sector esté infectado.`, 'warning');
   }
 
+  if (state.difficulty === 'escolar') {
+    if (Math.random() <= 0.65) { // 65% success rate
+      // Clean the sector
+      const newSectors = state.sectors.map(s => s.id === sectorId ? { ...s, infectionLevel: 0 } : s);
+      let newState = { ...state, sectors: newSectors };
+      newState = logEvent(newState, `💻 Sector ${sector.name} ha sido limpiado.`, 'success');
+      
+      // Also find a clue
+      const newClues = newState.playerResources.cluesFound + 1;
+      newState = { ...newState, playerResources: { ...newState.playerResources, cluesFound: newClues } };
+      
+      const cluesNeeded = newState.difficulty === 'escolar' ? 2 : 3;
+      if (newClues >= cluesNeeded) {
+        newState = { ...newState, playerResources: { ...newState.playerResources, hasDecryptionKey: true } };
+        newState = logEvent(newState, '🗝️ ¡Clave de descifrado obtenida!', 'key');
+      }
+      
+      return logEvent(newState, `🔍 Pista encontrada en ${sector.name}`, 'clue');
+    } else {
+      return logEvent(state, `No se encontraron pistas en ${sector.name}.`, 'info');
+    }
+  }
+
+  // Original logic for other difficulties
   const diceRoll = rollDice();
 
   if (diceRoll >= 5) {
     const newClues = state.playerResources.cluesFound + 1;
     let newState = { ...state, playerResources: { ...state.playerResources, cluesFound: newClues } };
     
-    if (newClues >= 3) {
+    const cluesNeeded = state.difficulty === 'escolar' ? 2 : 3; // 2 clues for escolar, 3 for other
+    if (newClues >= cluesNeeded) {
       newState = { ...newState, playerResources: { ...newState.playerResources, hasDecryptionKey: true } };
       newState = logEvent(newState, '🗝️ ¡Clave de descifrado obtenida!', 'key');
     }
-    
+
     return logEvent(newState, `🔍 Pista encontrada en ${sector.name}`, 'clue');
   } else {
     return logEvent(state, `No se encontraron pistas en ${sector.name}.`, 'info');
@@ -82,16 +118,44 @@ const restoreSector = (state, sectorId) => {
     return logEvent(state, `❌ ${sector.name} no tiene backup disponible`, 'error');
   }
 
-  const difficulty = state.difficulty;
-  const successThreshold = difficulty === 'escolar' ? 3 : 5;
+  if (state.difficulty === 'escolar') {
+    if (Math.random() <= 0.65) { // 65% success rate
+      const newSectors = state.sectors.map(s => 
+        s.id === sectorId 
+          ? { ...s, infectionLevel: 0, hasBackup: (s.id === 'servidor-principal' ? true : false) } 
+          : s
+      );
+      let newState = { ...state, sectors: newSectors };
+      return logEvent(newState, `💾 ${sector.name} restaurado exitosamente`, 'restore');
+    } else { // Restoration failed for escolar difficulty
+      const newSectors = state.sectors.map(s => 
+        s.id === sectorId 
+          ? { ...s, hasBackup: (s.id === 'servidor-principal' ? true : false) } 
+          : s
+      );
+      let newState = { ...state, sectors: newSectors };
+      return logEvent(newState, `❌ Falló la restauración de ${sector.name}`, 'failure');
+    }
+  }
+
+  // Original logic for other difficulties
+  const successThreshold = 5;
   const diceRoll = rollDice();
 
   if (diceRoll >= successThreshold) {
-    const newSectors = state.sectors.map(s => s.id === sectorId ? { ...s, infectionLevel: 0, hasBackup: false } : s);
+    const newSectors = state.sectors.map(s => 
+      s.id === sectorId 
+        ? { ...s, infectionLevel: 0, hasBackup: (s.id === 'servidor-principal' ? true : false) } 
+        : s
+    );
     let newState = { ...state, sectors: newSectors };
     return logEvent(newState, `💾 ${sector.name} restaurado exitosamente`, 'restore');
   } else {
-    const newSectors = state.sectors.map(s => s.id === sectorId ? { ...s, hasBackup: false } : s);
+    const newSectors = state.sectors.map(s => 
+      s.id === sectorId 
+        ? { ...s, hasBackup: (s.id === 'servidor-principal' ? true : false) } 
+        : s
+    );
     let newState = { ...state, sectors: newSectors };
     return logEvent(newState, `❌ Falló la restauración de ${sector.name}`, 'failure');
   }
@@ -143,6 +207,19 @@ const selectRandomEvent = (events) => {
 };
 
 const advanceRansomwareTracker = (state) => {
+  if (state.difficulty === 'escolar') {
+    const newTurnsSinceAdvance = state.turnsSinceRansomwareAdvance + 1;
+    if (newTurnsSinceAdvance >= 2) { // Advance every 2 turns for escolar
+      return {
+        ...state,
+        ransomwareProgress: Math.min(state.ransomwareProgress + 3, 100),
+        turnsSinceRansomwareAdvance: 0 // Reset counter
+      };
+    } else {
+      return { ...state, turnsSinceRansomwareAdvance: newTurnsSinceAdvance };
+    }
+  }
+  // Default behavior for other difficulties (e.g., experto)
   return { ...state, ransomwareProgress: Math.min(state.ransomwareProgress + 3, 100) };
 };
 
@@ -156,13 +233,21 @@ const checkDefeatConditions = (state) => {
     return triggerGameOver(state, 'El ransomware cifró toda la red.');
   }
 
-  const destroyedCount = state.sectors.filter(s => s.infectionLevel === 3).length;
-  if (destroyedCount >= 3) {
-    return triggerGameOver(state, 'Demasiados sistemas destruidos.');
-  }
+    const destroyedCount = state.sectors.filter(s => s.infectionLevel === 3).length;
 
-  const criticalSectors = ['calificaciones', 'servidor-principal'];
-  const criticalDestroyed = criticalSectors.filter(id => state.sectors.find(s => s.id === id).infectionLevel === 3);
+    if (destroyedCount >= 2) { // Changed from 3 to 2
+
+      return triggerGameOver(state, 'Demasiados sistemas destruidos.');
+
+    }
+
+  
+
+    const criticalSectors = ['calificaciones', 'servidor-principal']; // 'administrativo' removed
+
+    const criticalDestroyed = criticalSectors.filter(id => 
+
+      state.sectors.find(s => s.id === id).infectionLevel === 3);
   if (criticalDestroyed.length >= 2) {
     return triggerGameOver(state, 'Sistemas críticos comprometidos.');
   }
@@ -171,11 +256,23 @@ const checkDefeatConditions = (state) => {
 };
 
 const infectionPhase = (state) => {
+  const eventHints = {
+    email_malicioso: 'Un sector ha sido infectado. Analízalo para buscar pistas o aíslalo con un firewall para evitar que la infección se propague.',
+    usb_infectada: 'El progreso del ransomware ha aumentado. Concéntrate en restaurar sectores cifrados o analizar los infectados para obtener la clave de descifrado.',
+    propagacion_rapida: '¡El nivel de amenaza ha subido! El ransomware es ahora más peligroso. Es crucial contener los sectores infectados para frenarlo.'
+  };
+
   const selectedEvent = selectRandomEvent(ransomwareEvents);
   
   let newState = selectedEvent.effect(state);
   newState = logEvent(newState, `🦠 ${selectedEvent.message}`, 'infection');
   newState = advanceRansomwareTracker(newState);
+
+  // Set hint modal
+  const hintMessage = eventHints[selectedEvent.id];
+  if (hintMessage) {
+    newState = { ...newState, hintModal: { isOpen: true, message: hintMessage } };
+  }
   
   newState = checkDefeatConditions(newState);
 
@@ -206,9 +303,8 @@ const propagationPhase = (state) => {
     }
   });
 
-  // Reset firewalls
-  const newSectors = newState.sectors.map(s => ({ ...s, hasFirewall: false }));
-  newState = { ...newState, sectors: newSectors, gamePhase: 'playerAction' };
+  // Firewalls will be reset at the start of the player's next turn
+  newState = { ...newState, gamePhase: 'playerAction' };
 
   return newState;
 };
@@ -242,21 +338,25 @@ export const gameReducer = (state, action) => {
         selectedSector: state.selectedSector === action.sectorId ? null : action.sectorId
       };
     case 'PERFORM_ACTION': {
-      if (!state.selectedSector || state.gamePhase !== 'playerAction') return state;
+      // Reset firewalls from the previous turn at the beginning of the player's action
+      const sectorsWithResetFirewalls = state.sectors.map(s => ({ ...s, hasFirewall: false }));
+      const stateAfterFirewallReset = { ...state, sectors: sectorsWithResetFirewalls };
+
+      if (!stateAfterFirewallReset.selectedSector || stateAfterFirewallReset.gamePhase !== 'playerAction') return stateAfterFirewallReset;
 
       let newState;
       switch (action.actionType) {
         case 'contain':
-          newState = containSector(state, state.selectedSector);
+          newState = containSector(stateAfterFirewallReset, stateAfterFirewallReset.selectedSector);
           break;
         case 'analyze':
-          newState = analyzeSector(state, state.selectedSector);
+          newState = analyzeSector(stateAfterFirewallReset, stateAfterFirewallReset.selectedSector);
           break;
         case 'restore':
-          newState = restoreSector(state, state.selectedSector);
+          newState = restoreSector(stateAfterFirewallReset, stateAfterFirewallReset.selectedSector);
           break;
         default:
-          return state;
+          return stateAfterFirewallReset;
       }
 
       newState = checkVictoryConditions(newState);
@@ -270,6 +370,8 @@ export const gameReducer = (state, action) => {
       if (state.gamePhase !== 'playerAction') return state;
       return advanceTurn({ ...state, gamePhase: 'infection' });
     }
+    case 'CLOSE_HINT_MODAL':
+      return { ...state, hintModal: { isOpen: false, message: '' } };
     default:
       return state;
   }
